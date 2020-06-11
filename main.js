@@ -20,7 +20,46 @@ function getCellElements (currentRowElement) {
 }
 
 
-// YOUR CODE GOES HERE
+replaceAllButton.addEventListener('click', function(){
+    let inputToFind = findInput.value
+    let inputToReplace = replaceInput.value
+    
+    for(let index = 0; index < rowElements.length; index ++){
+       
+     let searchResults =  getCellElements(rowElements[index])
+        
+console.log(searchResults)
+      
+    for(let index2 = 0; index2 < searchResults.length; index2 ++){
+            if (searchResults[index2].innerHTML.includes(inputToFind)){
+                
+                let newResult = inputToFind.replace(inputToFind,inputToReplace)
+                searchResults[index2].innerHTML = newResult
+
+            }
+
+      }
+        
+        
+
+
+}
+
+})
+
+// So .replace doesn't do anything to the HTML.  All it does is give us back the modified string that we want.  So I would save the results of .replace() to a variable and then reassign the innerHTML of our currentCell (seachResults[index2]) to that variable 
+
+
+// Inside this loop, use the getCellElements() function (already provided in the starter code) and assign the resulting array of cell elements to a variable.
+// Write a nested loop which loops over the array of cell elements.
+// For each cell element, check if a cell contains the user-provided search string. Use the string method includes().
+// If a cell does contain the user-provided search string, use innerHTML and the string method replace() to replace the user-provided search string with the user-provided replacement string.
+
+
+
+
+
+
 
 
 // One last thing: dedicate very careful attention to using variables and
